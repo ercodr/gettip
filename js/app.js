@@ -2,6 +2,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     fetchQuote();
 
+    let strArray2 = JSON.parse(localStorage.getItem('bookmark'));
+
     const getQuote = document.getElementById('getQuote');
     const home = document.getElementById('home');
     const bookmark = document.getElementById('bookmark');
@@ -119,7 +121,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if(window.localStorage.length == 0){
             ul.innerHTML = `<div>No quote bookmarked</div>`;
         } else {
-            let strArray2 = JSON.parse(localStorage.getItem('bookmark'));
             strArray2.forEach(quote => {
                 ul.innerHTML += `
                     <li id="li">
@@ -132,6 +133,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function bookmarkValidation(){
+
+        favorite
         if(display.innerText == value){
             save.classList.replace('fa-heart-o', 'fa-heart');
         }
