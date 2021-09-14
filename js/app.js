@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const display = document.getElementById('display');
     const quoteSave = document.getElementById('quote-save');
     let ul = document.getElementById('ul');
-    let li = document.getElementById('li');
+    let log = document.getElementById('log');
 
     const save = document.getElementById('save');
 
@@ -99,6 +99,19 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+
+    display.addEventListener('click', () => {
+        let textCopy = display.innerText;
+        navigator.clipboard.writeText(textCopy).then(function() {
+        console.log('Async: Copying to clipboard was successful!');
+        log.innerText = 'Async: Copying to clipboard was successful!';
+        setTimeout(() => {
+            log.innerText = '';
+        }, 2500);
+        }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+        });
+    });
 
 });
 
