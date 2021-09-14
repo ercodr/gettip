@@ -170,6 +170,18 @@ ul div{
     padding: 2.5px 0;
 }
 
+#log2{
+    position: fixed;
+    margin-top: 50px;
+    bottom: 0;
+    background: var(--primary);
+    width: 100vw;
+    text-align: center;
+    color: var(--neutral);
+    font-size: small;
+    padding: 2.5px 0;
+}
+
 
 .delQuote{
     color: var(--neutral);

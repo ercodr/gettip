@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const homeView = document.getElementById('homeView');
     const back = document.getElementById('back');
     const clearBookmark = document.getElementById('clearBookmark');
+    const log2 = document.getElementById('log2');
 
 
     // ARRAY FOR BOOKMARKING
@@ -81,7 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(value => {
             display.innerHTML = `${value.slip.advice}`;
 
-            // bookmarkValidation();
+            bookmarkValidation();
 
         }).catch((error) => {
             console.log(error)
@@ -134,11 +135,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function bookmarkValidation(){
 
-        favorite
         if(display.innerText == value){
             save.classList.replace('fa-heart-o', 'fa-heart');
         }
     }
+
+
+
+    log2.innerText = strArray2.length;
     
 });
 
