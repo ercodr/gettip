@@ -1,0 +1,21 @@
+{
+    "name": "Advice Slip - GetAdvice",
+    "short_name": "GetAdvice",
+    "start_url": "./index.html",
+    "description": "Advice generating app",
+    "lang": "en-US",
+    "developer": {
+        "name": "Alphascid Technologies"
+    },
+    "icons": [
+      {
+        "src": "./icons/512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#6a00f4",
+    "background_color": "#6a00f4",
+    "display": "standalone",
+    "orientaion": "portrait"
+  }

@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+@font-face {
+    font-family: felix;
+    src: url(./fonts/FELIXTI.TTF);
+}
+
+:root{
+    --primary: #6a00f4;
+    --neutral: #ffffff;
+    --btn-hover: #4600a1;
+    --body: #000000;
+}
+
+body{
+    cursor: default;
+    /* background: var(--body); */
+    overflow-x: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+.appbar{
+    display: flex;
+    justify-content: space-around;
+}
+
+.appbar span{
+    font-size: 10px;
+}
+
+.btn{
+    background: var(--primary);
+    color: var(--neutral);
+    width: 100vw;
+    padding: 10px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover{
+    background: var(--btn-hover);
+}
+
+.displayScreen{
+    background: var(--primary);
+    color: var(--neutral);
+    margin: 35px;
+    border-radius: 5px;
+    min-height: 250px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 0 0 5px rgba(111, 0, 255, 0.2);
+}
+
+
+.displayScreen .lower{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    margin-top: 30px;
+}
+
+.getQuote{
+    background: var(--primary);
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: var(--neutral);
+    width: fit-content;
+    margin: auto;
+    cursor: pointer;
+    box-shadow: 0 5px 10px 1px rgba(133, 133, 133, 0.2);
+}
+
+/* .getQuote:hover{
+    background: var(--btn-hover);
+} */
+
+.getQuote:active{
+    transform: scale(.97);
+    /* outline: #6a00f4 solid 3px; */
+}
+
+.getQuote::selection{
+    display: none;
+}
+
+.bookmark{
+    cursor: pointer;
+}
+
+.appbar .fa{
+    margin: 0 10px;
+    font-size: 30px;
+}
+
+.bookmarkContainer{
+    display: none;
+}
+
+.style{
+    font-family: 'felix';
+    font-size: 100px;
+    line-height: -1;
+    transform: rotate(180deg);
+    height: 50px;   
+}
+
+.upper{
+    min-height: 70px;
+}
+
+/* BOOKMARK PAGE */
+.bookmarkContainer .content{
+    width: 100%;
+}
+
+.bookmarkContainer ul li{
+    background: var(--primary);
+    color: var(--neutral);
+    margin: 35px;
+    border-radius: 5px;
+    min-height: 150px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 0px 0px 5px rgba(111, 0, 255, 0.2);
+}
+
+.fa-window-close{
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.fa-window-close:hover{
+    color:#bebebe;
+}
+
+ul div{
+    margin-top: 20px;
+    color: #969696;
+}
+
+#log{
+    position: fixed;
+    margin-top: 50px;
+    bottom: 0;
+    background: var(--primary);
+    width: 100vw;
+    text-align: center;
+    color: var(--neutral);
+    font-size: small;
+    padding: 2.5px 0;
+}
+
+
+.delQuote{
+    color: var(--neutral);
+}
+
+/* ADD TO HOME SCREEN */
+.add-button {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+  }
