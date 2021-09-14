@@ -2,10 +2,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     fetchQuote();
 
-    // let initial = JSON.parse(localStorage.getItem('bookmark'));
-
-    // localStorage.removeItem('bookmark');
-
     const getQuote = document.getElementById('getQuote');
     const home = document.getElementById('home');
     const bookmark = document.getElementById('bookmark');
@@ -48,25 +44,18 @@ window.addEventListener('DOMContentLoaded', () => {
         
     });
 
+    let initial = JSON.parse(localStorage.getItem('bookmark'));
+
     // BOOKMARK BUTTON  TOGGLE
     quoteSave.addEventListener('click', () => {
 
-        // if(display.innerText == ''){
-        //     log.innerText = 'BookmarkError: Failed to bookmark';
-        //     setTimeout(() => {
-        //         log.innerText = '';
-        //     }, 2500);
-        //     return
-        // }
-
-        // initial.forEach((value) => {
-        //     if(display.innerText == value){
-        //         log.innerText = 'Already in bookmark...'
-        //         setTimeout(() => {
-        //             log.innerText = '';
-        //         }, 2500);
-        //     }
-        // })
+        if(display.innerText == ''){
+            log.innerText = 'BookmarkError: Failed to bookmark';
+            setTimeout(() => {
+                log.innerText = '';
+            }, 2500);
+            return
+        }
 
         if(save.classList.contains('fa-heart-o')){
             save.classList.replace('fa-heart-o', 'fa-heart');
