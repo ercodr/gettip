@@ -110,6 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 2500);
         }, function(err) {
         console.error('Async: Could not copy text: ', err);
+        log.innerText = err;
         });
     });
 
