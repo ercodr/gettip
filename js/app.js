@@ -2,14 +2,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     fetchQuote();
 
-    let strArray2 = JSON.parse(localStorage.getItem('bookmark'));
-
     const getQuote = document.getElementById('getQuote');
     const home = document.getElementById('home');
     const bookmark = document.getElementById('bookmark');
     const display = document.getElementById('display');
     const quoteSave = document.getElementById('quote-save');
-    const ul = document.getElementById('ul');
+    let ul = document.getElementById('ul');
+    let li = document.getElementById('li');
 
     const save = document.getElementById('save');
 
@@ -17,17 +16,25 @@ window.addEventListener('DOMContentLoaded', () => {
     const homeView = document.getElementById('homeView');
     const back = document.getElementById('back');
     const clearBookmark = document.getElementById('clearBookmark');
-    const log2 = document.getElementById('log2');
 
 
     // ARRAY FOR BOOKMARKING
-    let favorite = Array()
+    let favorite = new Array();
 
-    // TOGGLE VIEWS
+    if(localStorage.length != 0){
+        JSON.parse(localStorage.getItem('bookmark')).forEach( quote => {
+            favorite.push(quote)
+        })
+    }
+
+    console.log(favorite)
+
+    // TOGGLE RELOAD PAGE
     home.addEventListener('click', () => {
         location.reload();
     });
 
+    // TOGGLE BOOKMARK VIEW
     bookmark.addEventListener('click', () => {
         bookmarkView.style.display = 'block';
         homeView.style.display = 'none';
@@ -40,37 +47,19 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     
     getQuote.addEventListener('click', () => {
-        
         fetchQuote();
-
         save.classList.replace('fa-heart', 'fa-heart-o');
-        
     });
 
-    let initial = JSON.parse(localStorage.getItem('bookmark'));
-
-    // BOOKMARK BUTTON  TOGGLE
+    // BOOKMARK BUTTON TOGGLE
     quoteSave.addEventListener('click', () => {
-
-        if(display.innerText == ''){
-            log.innerText = 'BookmarkError: Failed to bookmark';
-            setTimeout(() => {
-                log.innerText = '';
-            }, 2500);
-            return
-        }
 
         if(save.classList.contains('fa-heart-o')){
             save.classList.replace('fa-heart-o', 'fa-heart');
-
-            setBookmark();
-            
-        } else{
+            setBookmark();            
+        }else{
             save.classList.replace('fa-heart', 'fa-heart-o');
-        }
-
-
-        
+        }        
     });
 
 
@@ -81,69 +70,36 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(res => res.json())
         .then(value => {
             display.innerHTML = `${value.slip.advice}`;
-
-            bookmarkValidation();
-
-        }).catch((error) => {
-            console.log(error)
-        })
+        }).catch( error => console.log(error))
     }
-
 
     // ADD QUOTES TO BOOKMARK INTO LOCAL STORAGE
     function setBookmark(){
-    
-        if(!localStorage == null){
-            favorite = JSON.parse(localStorage.getItem('bookmark'));
-            favorite.push(display.innerText)
-            // CONVERTING ARRAY TO STRING
-            let strArray = JSON.stringify(favorite);
-            localStorage.setItem('bookmark', strArray);
-            
-        } else {
-            favorite.push(display.innerText)
-            // CONVERTING ARRAY TO STRING
-            let strArray = JSON.stringify(favorite);
-            // ACCESSING LOCAL STORAGE
-            localStorage.setItem('bookmark', strArray);
-        }        
+        favorite.push('New add two three');
+        let uniqueFav = [...new Set(favorite)];
+        localStorage.setItem('bookmark', JSON.stringify(uniqueFav));
     }
 
     // CLEAR/DELETE ALL BOOKMARKS
     clearBookmark.addEventListener('click', () => {
         localStorage.removeItem('bookmark');
-        ul.innerHTML = `<div>No quote bookmarked</div>`;
+        ul.innerHTML = `<div>Bookmark empty</div>`;
     });
 
     // LOAD BOOKMARK FROM LOCAL STORAGE
     function loadBookmark(){
         ul.innerHTML = '';
-
-        if(window.localStorage.length == 0){
-            ul.innerHTML = `<div>No quote bookmarked</div>`;
-        } else {
-            strArray2.forEach(quote => {
-                ul.innerHTML += `
-                    <li id="li">
-                        <span>${quote}</span>
-                        <i class="fa fa-window-close"></i>        
-                    </li>
-                    `;
-            })
+        if(localStorage.length == 0){
+            ul.innerHTML = '<div>Bookmark empty</div>'
+            return
         }
-    }
-
-    function bookmarkValidation(){
-
-        if(display.innerText == value){
-            save.classList.replace('fa-heart-o', 'fa-heart');
-        }
+        let array = JSON.parse(localStorage.getItem('bookmark'));
+        array.forEach(quote => {
+            ul.innerHTML += `<li>${quote}</li>`
+        })
     }
 
 
-
-    log2.innerText = strArray2.length;
-    
 });
 
 

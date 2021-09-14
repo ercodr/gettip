@@ -1,6 +1,6 @@
 {
-    "name": "Get Tip",
-    "short_name": "Get Tip",
+    "name": "Get Tips - Advice Slip",
+    "short_name": "Get Tips",
     "start_url": "./index.html",
     "description": "Advice generating app",
     "lang": "en-US",
