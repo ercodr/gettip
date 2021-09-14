@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // ADD QUOTES TO BOOKMARK INTO LOCAL STORAGE
     function setBookmark(){
-        favorite.push('New add two three');
+        favorite.push(display.innerText);
         let uniqueFav = [...new Set(favorite)];
         localStorage.setItem('bookmark', JSON.stringify(uniqueFav));
     }
