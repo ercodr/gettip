@@ -70,9 +70,11 @@
     <div id="report-bg">
         <div id="reportCard">
             <h4>LOG REPORT</h4>
-            <b>Desc:</b>
-            This section will allow you to log any bug or mulfunctioning report from this app to the developer team 
-            <br><br><span style="font-size: 12px;">&copy; 2021 | Alphascid</span>
+            <form id="form">
+                <input type="text" id="name" placeholder="Name">
+                <textarea id="message" cols="50" rows="5" placeholder="Report goes here..." required></textarea>
+                <input type="button" value="Submit" class="submit">
+            </form>
         </div>
 
         <div id="closeModal">

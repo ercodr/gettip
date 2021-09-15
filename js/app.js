@@ -71,10 +71,6 @@ window.addEventListener('DOMContentLoaded', () => {
     close_modal.addEventListener('click', () => {
         report_bg.style.display = 'none';
     });
-    
-    report_bg.addEventListener('click', () => {
-        report_bg.style.display = 'none';
-    });
 
     // GET QUOTE FROM THE SERVER
     function fetchQuote(){
