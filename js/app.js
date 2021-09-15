@@ -9,6 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const quoteSave = document.getElementById('quote-save');
     let ul = document.getElementById('ul');
     let log = document.getElementById('log');
+    const logReport = document.getElementById('report');
+    const close_modal = document.getElementById('closeModal');
 
     const save = document.getElementById('save');
 
@@ -16,6 +18,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const homeView = document.getElementById('homeView');
     const back = document.getElementById('back');
     const clearBookmark = document.getElementById('clearBookmark');
+    const badge = document.getElementById('badge');
+    const report_bg = document.getElementById('report-bg');
 
 
     // ARRAY FOR BOOKMARKING
@@ -26,8 +30,6 @@ window.addEventListener('DOMContentLoaded', () => {
             favorite.push(quote)
         })
     }
-
-    console.log(favorite)
 
     // TOGGLE RELOAD PAGE
     home.addEventListener('click', () => {
@@ -62,6 +64,17 @@ window.addEventListener('DOMContentLoaded', () => {
         }        
     });
 
+    logReport.addEventListener('click', () => {
+        report_bg.style.display = 'flex';
+    });
+
+    close_modal.addEventListener('click', () => {
+        report_bg.style.display = 'none';
+    });
+    
+    report_bg.addEventListener('click', () => {
+        report_bg.style.display = 'none';
+    });
 
     // GET QUOTE FROM THE SERVER
     function fetchQuote(){
@@ -113,6 +126,14 @@ window.addEventListener('DOMContentLoaded', () => {
         log.innerText = err;
         });
     });
+
+
+    setInterval(() => {
+        badge.innerHTML = favorite.length;
+    }, 0);
+
+
+
 
 });
 
