@@ -193,7 +193,19 @@ ul div{
     padding: 2.5px 0;
 }
 
+#form h1{
+    border: none;
+    width: 80vw;
+    padding: 60px 0;
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#form h1 *{
+    margin: 0 10px;
+}
 
 #badge{
     margin-left: 10px;

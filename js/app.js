@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        
+        send_mail();
     })
 
     // logReport.addEventListener('click', () => {
@@ -213,6 +213,42 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+    function send_mail() {
+        var templateParams = {
+            from_name: document.getElementById('name').value,
+            to_name: "Alphsacid Technologies",
+            message: document.getElementById('message').value
+        };
+
+        document.getElementById('name').value = '';
+        document.getElementById('message').value = '';
+
+        setTimeout(() => {
+            document.getElementById('form').innerHTML = `
+            <h1>
+                <i class="fa fa-check-circle" style="font-size: 120px;"></i>
+                <span>E-MAIL SENT!</span>
+            </h1>
+            `
+        }, 2000);
+        
+        emailjs.send('service_qst8txo', 'template_77h5nq8', templateParams)
+            .then(function(response) {
+                report_bg.style.display = 'none';
+                console.log('SUCCESS!', response.status, response.text);
+                log.innerText = 'SUCCESS!';
+                setTimeout(() => {
+                log.innerText = '';
+            }, 2500);
+            }, function(error) {
+                console.log('FAILED...', error);
+                log.innerHTML = `FAILED: ${error}`;
+                setTimeout(() => {
+                log.innerText = '';
+            }, 2500);
+            });
+    }
 });
 
 
