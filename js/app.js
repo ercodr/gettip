@@ -78,6 +78,21 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    share_button.addEventListener('click', async () => {
+        const shareData = {
+            title: 'Get Tips',
+            text: display.textContent,
+            url: 'https://ercodr.github.io/gettip/'
+          }
+          
+        try {
+          await navigator.share(shareData)
+        } catch(err) {
+          resultPara.textContent = console.log(err)
+        }
+    });
+
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -182,9 +197,18 @@ window.addEventListener('DOMContentLoaded', () => {
     // SHARE APP
     document.getElementById('share-app').addEventListener('click', async () => {
 
+        const install = `
+            HOW TO INSTALL GET TIPS:
+            1. Open the below URL in chrome
+            2. Click on menu (three vertical dots)
+            3. Tap "Add to Home screeen"
+            4. Tap Add
+            5. Tap Add
+        `
+
         const shareData = {
             title: 'Get Tips',
-            text: display.textContent,
+            text: install,
             url: 'https://ercodr.github.io/gettip/'
           }
           
@@ -193,7 +217,7 @@ window.addEventListener('DOMContentLoaded', () => {
         } catch(err) {
           resultPara.textContent = console.log(err)
         }
-      });
+    });
 
     // document.getElementById('').addEventListener('click', () => {
 
