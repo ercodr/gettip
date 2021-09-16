@@ -25,6 +25,8 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: poppins;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .container{
@@ -117,6 +119,11 @@ body{
 .appbar .fa{
     margin: 0 10px;
     font-size: 30px;
+}
+
+.hand-burger{
+    width: fit-content!important;
+    background: var(--btn-hover);
 }
 
 .bookmarkContainer{
@@ -260,7 +267,7 @@ ul div{
 
 #closeModal{
     font-size: 25px;
-    color: #fff;
+    color: var(--neutral);
     cursor: pointer;
     padding: 5px 20px;
 }
@@ -316,6 +323,68 @@ ul div{
 }
 
 
+
+
+/* SIDE MENU */
+#menu-bg{
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* animation: bgIn .5s; */
+}
+
+#menu-list{
+    height: 100vh;
+    background: var(--neutral);
+    width: 50%;
+    /* animation: slideIn 1s; */
+}
+
+#menu-list .header-image{
+    background: var(--btn-hover);
+    width: 100%;
+    padding: 35px 10px;
+    color: var(--neutral);
+}
+
+.menu-item{
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.menu-item:hover{
+    background: rgba(133, 133, 133, 0.8);
+}
+
+.menu-item *::selection{
+    display: none;
+}
+
+
+#menu-list span{
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes bgIn {
     from {
       opacity: 0;
@@ -323,6 +392,16 @@ ul div{
   
     to {
         opacity: 1;
+    }
+}
+
+@keyframes bgOut {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+        opacity: 0;
     }
 }
 
@@ -334,5 +413,27 @@ ul div{
   
     to {
         transform: scale(1);
+    }
+}
+
+
+@keyframes slideIn {
+    from {
+      transform: translateX(-600px);
+    }
+  
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes collapse {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+        transform: translateX(-600px);
     }
 }

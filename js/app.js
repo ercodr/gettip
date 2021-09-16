@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const logReport = document.getElementById('report');
     const close_modal = document.getElementById('closeModal');
     const share_button = document.getElementById('share');
+    const handBurger = document.getElementById('hand-burger');
 
     const save = document.getElementById('save');
 
@@ -22,12 +23,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const badge = document.getElementById('badge');
     const report_bg = document.getElementById('report-bg');
     const form = document.getElementById('form');
+    const menu_bg = document.getElementById('menu-bg');
+    const menu_list = document.getElementById('menu-list');
     
 
 
     // ARRAY FOR BOOKMARKING
     let favorite = new Array();
-    
+
 
     if(localStorage.length != 0){
         JSON.parse(localStorage.getItem('bookmark')).forEach( quote => {
@@ -56,6 +59,18 @@ window.addEventListener('DOMContentLoaded', () => {
         fetchQuote();
         save.classList.replace('fa-heart', 'fa-heart-o');
         netError();
+    });
+
+    handBurger.addEventListener('click', () => {
+        menu_bg.style.display = 'flex';
+        menu_bg.style.animation = 'bgIn .5s';
+        menu_list.style.animation = 'slideIn .5s';
+    });
+
+
+    menu_bg.addEventListener('click', () => {
+        // menu_bg.style.animation = 'bgOut 1s';
+        menu_bg.style.display = 'none'
     });
 
     // BOOKMARK BUTTON TOGGLE
