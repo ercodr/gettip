@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let log = document.getElementById('log');
     const logReport = document.getElementById('report');
     const close_modal = document.getElementById('closeModal');
+    const share_button = document.getElementById('share');
 
     const save = document.getElementById('save');
 
@@ -20,10 +21,21 @@ window.addEventListener('DOMContentLoaded', () => {
     const clearBookmark = document.getElementById('clearBookmark');
     const badge = document.getElementById('badge');
     const report_bg = document.getElementById('report-bg');
+    const form = document.getElementById('form');
+    
 
 
     // ARRAY FOR BOOKMARKING
     let favorite = new Array();
+
+
+    const shareData = {
+        title: 'Get Tips',
+        text: display.innerText,
+        url: 'https://ercodr.github.io/gettip/'//document.location.href
+      }
+
+
 
     if(localStorage.length != 0){
         JSON.parse(localStorage.getItem('bookmark')).forEach( quote => {
@@ -51,6 +63,16 @@ window.addEventListener('DOMContentLoaded', () => {
     getQuote.addEventListener('click', () => {
         fetchQuote();
         save.classList.replace('fa-heart', 'fa-heart-o');
+        netError();
+    });
+
+    share_button.addEventListener('click', async () => {
+        try {
+            await navigator.share(shareData)
+            // log.innerText = 'MDN shared successfully'
+        } catch(err) {
+            log.innerText = 'Error: ' + err
+        }
     });
 
     // BOOKMARK BUTTON TOGGLE
@@ -112,13 +134,13 @@ window.addEventListener('DOMContentLoaded', () => {
     display.addEventListener('click', () => {
         let textCopy = display.innerText;
         navigator.clipboard.writeText(textCopy).then(function() {
-        console.log('Async: Copying to clipboard was successful!');
-        log.innerText = 'Async: Copying to clipboard was successful!';
+        console.log('Copied!');
+        log.innerText = 'Copied!';
         setTimeout(() => {
             log.innerText = '';
         }, 2500);
         }, function(err) {
-        console.error('Async: Could not copy text: ', err);
+        console.error('Could not copy text: ', err);
         log.innerText = err;
         });
     });
@@ -127,6 +149,21 @@ window.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
         badge.innerHTML = favorite.length;
     }, 0);
+
+    function netError(){
+        setTimeout(() => {
+            if(display.innerText == ''){
+                log.innerText = 'net::ERR_INTERNET_DISCONNECTED';
+                setTimeout(() => {
+                    log.innerText = '';
+                }, 2500);
+            } else {
+                log.innerText = '';
+            }    
+        }, 1500);
+    }
+
+    netError();
 
 
 
