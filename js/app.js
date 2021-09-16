@@ -39,9 +39,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // TOGGLE RELOAD PAGE
-    home.addEventListener('click', () => {
-        location.reload();
-    });
+    // home.addEventListener('click', () => {
+    //     location.reload();
+    // });
 
     // TOGGLE BOOKMARK VIEW
     bookmark.addEventListener('click', () => {

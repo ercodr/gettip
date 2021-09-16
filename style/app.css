@@ -123,11 +123,11 @@ body{
 
 .hand-burger{
     justify-content: start;
-    padding: 10px 20px;
 }
 
 .hand-burger .fa{
     font-size: 20px;
+    margin: 0 30px;
 }
 
 .bookmarkContainer{
