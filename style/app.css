@@ -55,9 +55,9 @@ body{
     align-items: center;
 }
 
-.btn:hover{
+/* .btn:hover{
     background: var(--btn-hover);
-}
+} */
 
 .displayScreen{
     background: var(--primary);
@@ -65,7 +65,7 @@ body{
     margin: 35px;
     border-radius: 5px;
     min-height: 250px;
-    padding: 30px;
+    padding: 10px 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -76,7 +76,6 @@ body{
 .displayScreen .lower{
     display: flex;
     justify-content: space-between;
-    /* margin: 0 10px; */
     margin-top: 30px;
 }
 
@@ -328,18 +327,21 @@ ul div{
     background: rgba(0, 0, 0, 0.8);
     height: 100vh;
     width: 100vw;
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
-    left: 0;
-    /* animation: bgIn .5s; */
+    left: -550px;
+    transition:  all .5s ease-out;
 }
 
 #menu-list{
     height: 100vh;
     background: var(--neutral);
     width: 70%;
-    /* animation: slideIn 1s; */
+    position: fixed;
+    top: 0;
+    left: -400px;
+    transition:  all .5s ease-out;
 }
 
 #menu-list .header-image{
@@ -367,34 +369,6 @@ ul div{
 #menu-list span{
     margin-left: 10px;
 }
-
-
-
-.bgIn{
-     animation: bgIn .5s;
-}
-
-.bgOut{
-    
-}
-
-.slideIn{
-     animation: slideIn .5s;
-}
-
-.collapse{
-    
-}
-
-
-
-
-
-
-
-
-
-
 
 
 @keyframes bgIn {
@@ -431,21 +405,23 @@ ul div{
 
 @keyframes slideIn {
     from {
-      transform: translateX(-600px);
+      /* transform: translateX(-600px); */
+      left: -400px;
     }
   
     to {
-        transform: translateX(0);
+        /* transform: translateX(0); */
+        left: 0;
     }
 }
 
 
 @keyframes collapse {
     from {
-      transform: translateX(0);
+      width: 80%;
     }
   
     to {
-        transform: translateX(-600px);
+        width: 0%;
     }
 }

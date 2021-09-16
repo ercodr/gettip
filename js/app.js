@@ -62,15 +62,14 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     handBurger.addEventListener('click', () => {
-        menu_bg.style.display = 'flex';
-        menu_bg.style.animation = 'bgIn .5s';
-        menu_list.style.animation = 'slideIn .5s';
+        menu_list.style.left = '0';
+        menu_bg.style.left = '0';
     });
 
-
+    
     menu_bg.addEventListener('click', () => {
-        // menu_bg.style.animation = 'bgOut 1s';
-        menu_bg.style.display = 'none'
+        menu_list.style.left = '-400px';
+        menu_bg.style.left = '-550px';
     });
 
     // BOOKMARK BUTTON TOGGLE
