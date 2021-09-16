@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const quoteSave = document.getElementById('quote-save');
     let ul = document.getElementById('ul');
     let log = document.getElementById('log');
-    const logReport = document.getElementById('report');
     const close_modal = document.getElementById('closeModal');
     const share_button = document.getElementById('share');
     const handBurger = document.getElementById('hand-burger');
@@ -37,11 +36,6 @@ window.addEventListener('DOMContentLoaded', () => {
             favorite.push(quote)
         })
     }
-
-    // TOGGLE RELOAD PAGE
-    // home.addEventListener('click', () => {
-    //     location.reload();
-    // });
 
     // TOGGLE BOOKMARK VIEW
     bookmark.addEventListener('click', () => {
@@ -83,9 +77,16 @@ window.addEventListener('DOMContentLoaded', () => {
         }        
     });
 
-    logReport.addEventListener('click', () => {
-        report_bg.style.display = 'flex';
-    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        
+    })
+
+    // logReport.addEventListener('click', () => {
+    //     report_bg.style.display = 'flex';
+    // });
 
     close_modal.addEventListener('click', () => {
         report_bg.style.display = 'none';
@@ -162,6 +163,53 @@ window.addEventListener('DOMContentLoaded', () => {
 
     netError();
 
+
+    
+    // MENU SECTION MENU SECTION MENU SECTION
+
+    // APP CLOSE // BROWSER CLOSE
+    document.getElementById('exit').addEventListener('click', () => {
+        window.close();
+    });
+
+
+    // CONTACT US  // SEND US E_MAIL
+    document.getElementById('contact').addEventListener('click', () => {
+        report_bg.style.display = 'flex';
+    });
+
+
+    // SHARE APP
+    document.getElementById('share-app').addEventListener('click', async () => {
+
+        const shareData = {
+            title: 'Get Tips',
+            text: display.textContent,
+            url: 'https://ercodr.github.io/gettip/'
+          }
+          
+        try {
+          await navigator.share(shareData)
+        } catch(err) {
+          resultPara.textContent = console.log(err)
+        }
+      });
+
+    // document.getElementById('').addEventListener('click', () => {
+
+    // });
+
+    // document.getElementById('').addEventListener('click', () => {
+
+    // });
+
+    // document.getElementById('').addEventListener('click', () => {
+
+    // });
+
+    // document.getElementById('').addEventListener('click', () => {
+
+    // });
 
 
 
