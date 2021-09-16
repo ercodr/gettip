@@ -386,7 +386,39 @@ ul div{
     margin-left: 10px;
 }
 
+.get-help{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .75);
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all .35s ease-in-out;
+}
 
+.get-help ul{
+    animation: modalIn .5s;
+    width: 80vw;
+    padding: 20px;
+}
+
+.get-help ul li{
+    padding: 20px;
+    border-radius: 10px;
+    background: #fafafa;
+    margin: 20px 0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+    transition: all .35s ease-in-out;
+    border-left: solid #4600a1 15px;
+}
+
+.get-help ul li:hover{
+    /* transform: translateY(-5px); */
+    transform: scale(1.2);
+}
 
 
 @media screen and (min-width: 768px){
@@ -398,7 +430,7 @@ ul div{
         position: fixed;
         top: 0;
         left: 0;
-        /* transition:  all .1s ease-out; */
+        transition:  all .1s ease-out;
     }
 
     #menu-list{
