@@ -27,15 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // ARRAY FOR BOOKMARKING
     let favorite = new Array();
-
-
-    const shareData = {
-        title: 'Get Tips',
-        text: '',
-        url: display.innerText
-      }
-
-
+    
 
     if(localStorage.length != 0){
         JSON.parse(localStorage.getItem('bookmark')).forEach( quote => {
@@ -64,15 +56,6 @@ window.addEventListener('DOMContentLoaded', () => {
         fetchQuote();
         save.classList.replace('fa-heart', 'fa-heart-o');
         netError();
-    });
-
-    share_button.addEventListener('click', async () => {
-        try {
-            await navigator.share(shareData)
-            // log.innerText = 'MDN shared successfully'
-        } catch(err) {
-            log.innerText = 'Error: ' + err
-        }
     });
 
     // BOOKMARK BUTTON TOGGLE
