@@ -395,8 +395,9 @@ ul div{
     position: fixed;
     display: none;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     transition: all .35s ease-in-out;
+    overflow-y: auto;
 }
 
 .get-help ul{
@@ -417,7 +418,7 @@ ul div{
 
 .get-help ul li:hover{
     /* transform: translateY(-5px); */
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 
