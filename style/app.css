@@ -78,6 +78,15 @@ body{
     margin-top: 30px;
 }
 
+.displayScreen .lower .right{
+    display: flex;
+    cursor: pointer;
+}
+
+.displayScreen .lower .right i{
+    margin: 0 10px;
+}
+
 #display::selection{
     display: none;
 }
@@ -159,18 +168,6 @@ ul div{
 }
 
 #log{
-    position: fixed;
-    margin-top: 50px;
-    bottom: 0;
-    background: var(--primary);
-    width: 100vw;
-    text-align: center;
-    color: var(--neutral);
-    font-size: small;
-    padding: 2.5px 0;
-}
-
-#log2{
     position: fixed;
     margin-top: 50px;
     bottom: 0;
