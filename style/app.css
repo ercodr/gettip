@@ -124,6 +124,10 @@ body{
     justify-content: start;
 }
 
+.hand-burger:active{
+    background: var(--primary);
+}
+
 .hand-burger .fa{
     font-size: 20px;
     margin: 0 30px;
