@@ -18,6 +18,13 @@
     <!-- <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css"> -->
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("user_FGScLKFvwuKOygF9T0lap");
+    })();
+    </script>
 </head>
 <body>
     
@@ -82,7 +89,7 @@
             <form id="form">
                 <input type="text" id="name" placeholder="Name">
                 <textarea id="message" cols="50" rows="5" placeholder="Report goes here..." required></textarea>
-                <input type="submit" value="Submit" class="submit">
+                <input type="submit" value="Submit" class="submit" id="submit">
             </form>
         </div>
 
