@@ -31,8 +31,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const shareData = {
         title: 'Get Tips',
-        text: display.innerText,
-        url: 'https://ercodr.github.io/gettip/'//document.location.href
+        text: '',
+        url: display.innerText
       }
 
 
