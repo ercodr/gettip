@@ -326,21 +326,21 @@ ul div{
 #menu-bg{
     background: rgba(0, 0, 0, 0.6);
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     position: fixed;
     top: 0;
-    left: -800px;
-    /* transition:  all .1s ease-out; */
+    left: -100%;
+    transition:  all 0 ease-out;
 }
 
 #menu-list{
     height: 100vh;
     background: var(--neutral);
-    width: 70%;
+    width: 80%;
     position: fixed;
     top: 0;
-    left: -400px;
+    left: -80%;
     transition:  all .5s ease-out;
 }
 
@@ -371,6 +371,33 @@ ul div{
 }
 
 
+
+
+@media screen and (min-width: 768px){
+    #menu-bg{
+        background: rgba(0, 0, 0, 0.6);
+        height: 100vh;
+        width: 0;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* transition:  all .1s ease-out; */
+    }
+
+    #menu-list{
+        height: 100vh;
+        background: var(--neutral);
+        width: 80%;
+        position: fixed;
+        top: 0;
+        left: -80%;
+        transition:  all .5s ease-out;
+        /* box-shadow: 0 0 500px 0 rgb(0, 0, 0, .5); */
+    }
+
+}
+
 @keyframes bgIn {
     from {
       opacity: 0;
@@ -381,17 +408,6 @@ ul div{
     }
 }
 
-@keyframes bgOut {
-    from {
-      opacity: 1;
-    }
-  
-    to {
-        opacity: 0;
-    }
-}
-
-
 @keyframes modalIn {
     from {
       transform: scale(.5);
@@ -399,29 +415,5 @@ ul div{
   
     to {
         transform: scale(1);
-    }
-}
-
-
-@keyframes slideIn {
-    from {
-      /* transform: translateX(-600px); */
-      left: -400px;
-    }
-  
-    to {
-        /* transform: translateX(0); */
-        left: 0;
-    }
-}
-
-
-@keyframes collapse {
-    from {
-      width: 80%;
-    }
-  
-    to {
-        width: 0%;
     }
 }

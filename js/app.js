@@ -68,8 +68,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     
     menu_bg.addEventListener('click', () => {
-        menu_list.style.left = '-400px';
-        menu_bg.style.left = '-800px';
+        menu_list.style.left = '-80%';
+        menu_bg.style.left = '-100%';
     });
 
     // BOOKMARK BUTTON TOGGLE
