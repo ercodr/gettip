@@ -197,13 +197,15 @@ window.addEventListener('DOMContentLoaded', () => {
     // SHARE APP
     document.getElementById('share-app').addEventListener('click', async () => {
 
-        const install = `
-            HOW TO INSTALL GET TIPS:
-            1. Open the below URL in chrome
-            2. Click on menu (three vertical dots)
-            3. Tap "Add to Home screeen"
-            4. Tap Add
-            5. Tap Add
+        const install = 
+        `
+        *HOW TO INSTALL GET TIPS*:
+        1. Open the below URL in chrome
+        2. Click on menu (three vertical dots)
+        3. Tap "Add to Home screeen"
+        4. Tap Add
+        5. Tap Add
+
         `
 
         const shareData = {
