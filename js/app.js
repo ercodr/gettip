@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     menu_bg.addEventListener('click', () => {
         menu_list.style.left = '-400px';
-        menu_bg.style.left = '-550px';
+        menu_bg.style.left = '-800px';
     });
 
     // BOOKMARK BUTTON TOGGLE
