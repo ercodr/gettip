@@ -122,8 +122,12 @@ body{
 }
 
 .hand-burger{
-    width: fit-content!important;
-    /* background: var(--btn-hover); */
+    width: fit-content;
+    padding: 0 20px;
+}
+
+.hand-burger .fa{
+    font-size: 25px;
 }
 
 .bookmarkContainer{
@@ -372,7 +376,21 @@ ul div{
 
 
 
+.bgIn{
+     animation: bgIn .5s;
+}
 
+.bgOut{
+    
+}
+
+.slideIn{
+     animation: slideIn .5s;
+}
+
+.collapse{
+    
+}
 
 
 
