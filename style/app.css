@@ -127,7 +127,7 @@ body{
 }
 
 .hand-burger .fa{
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .bookmarkContainer{
@@ -190,26 +190,22 @@ ul div{
     padding: 2.5px 0;
 }
 
+#home{
+    width: 80%;
+}
 
-/* ADD TO HOME SCREEN */
-.add-button {
-    position: absolute;
-    top: 1px;
-    left: 1px;
-  }
-
-  #badge{
-      margin-left: 10px;
-      font-size: 10.5px;
-      background: yellow;
-      height: 22px;
-      width: 22px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: black;
-      font-weight: bold;
+#badge{
+    margin-left: 10px;
+    font-size: 10.5px;
+    background: yellow;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
   }
 
   #report{
