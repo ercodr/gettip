@@ -341,7 +341,7 @@ ul div{
     position: fixed;
     top: 0;
     left: -80%;
-    transition:  all .5s ease-out;
+    transition:  all .25s ease-out;
 }
 
 #menu-list .header-image{
