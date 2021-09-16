@@ -197,8 +197,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // SHARE APP
     document.getElementById('share-app').addEventListener('click', async () => {
 
-        const install = 
-        `
+        const install =  `
         *HOW TO INSTALL GET TIPS*:
         1. Open the below URL in chrome
         2. Click on menu (three vertical dots)
@@ -221,10 +220,13 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // document.getElementById('').addEventListener('click', () => {
+    document.getElementById('help').addEventListener('click', () => {
+        document.querySelector('.get-help').style.display = 'flex';
+    });
 
-    // });
-
+    document.querySelector('.get-help').addEventListener('click', () => {
+        document.querySelector('.get-help').style.display = 'none';
+    });
     // document.getElementById('').addEventListener('click', () => {
 
     // });
