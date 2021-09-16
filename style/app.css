@@ -122,8 +122,8 @@ body{
 }
 
 .hand-burger{
-    width: fit-content;
-    padding: 0 20px;
+    justify-content: start;
+    padding: 10px 20px;
 }
 
 .hand-burger .fa{
@@ -190,9 +190,7 @@ ul div{
     padding: 2.5px 0;
 }
 
-#home{
-    width: 80%;
-}
+
 
 #badge{
     margin-left: 10px;
