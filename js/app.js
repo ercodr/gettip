@@ -157,7 +157,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     previous.addEventListener('click', () => {
         if(quote_head <= 0){
-            previous.style.visibility = 'hidden'
+            quote_head = 0;
             return
         } else {
             quote_head--;
@@ -168,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     forward.addEventListener('click', () => {
         if(quote_head >= quotes.length){
-            forward.style.visibility = 'hidden'
+            quote_head = 0;
             return
         } else {
             quote_head++;
