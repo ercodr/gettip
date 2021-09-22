@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
     getQuote.addEventListener('click', () => {
         fetchQuote();
         save.classList.replace('fa-heart', 'fa-heart-o');
-        netError();
+        // netError();
     });
 
     handBurger.addEventListener('click', () => {
@@ -88,7 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
     share_button.addEventListener('click', async () => {
         const shareData = {
             title: 'Get Tips',
-            text: display.textContent,
+            text: display.textContent + '\n',
             url: 'https://ercodr.github.io/gettip/'
           }
           
@@ -106,15 +106,11 @@ window.addEventListener('DOMContentLoaded', () => {
         send_mail();
     })
 
-    // logReport.addEventListener('click', () => {
-    //     report_bg.style.display = 'flex';
-    // });
-
     close_modal.addEventListener('click', () => {
         report_bg.style.display = 'none';
     });
 
-    let quote_head = 0;
+    let quote_head = '';
 
     // GET QUOTE FROM THE SERVER
     function fetchQuote(){
@@ -123,12 +119,22 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(res => res.json())
         .then(value => {
             display.innerHTML = `${value.slip.advice}`;
-            quotes.push(display.textContent)
-            quote_head++
-            // forward.style.background = '';
-            
+            quotes.push(display.textContent);
+            quote_head++;
+            log.innerText = '';
             console.log(quotes)
-        }).catch( error => console.log(error))
+
+            navCheck();
+
+        }).catch( error => log.innerText = error)
+    }
+
+
+    function navCheck() {
+        if(quotes.length > 1){
+            previous.style.background = '';
+            previous.style.pointerEvents = '';
+        }
     }
 
     // ADD QUOTES TO BOOKMARK INTO LOCAL STORAGE
@@ -157,32 +163,38 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+
+
     previous.addEventListener('click', () => {
-        if(quote_head <= 0){
+        if(!quote_head == 0){
+            quote_head--;
+            display.innerText = quotes[quote_head];
+        } else {
             quote_head = 0;
             previous.style.pointerEvents = 'none';
-            previous.style.background = '#a1a1a1';
-            return
-        } else {
-            quote_head--;
-            display.innerHTML = quotes[quote_head];
-            forward.style.pointerEvents = '';
-            forward.style.background = '';
+            previous.style.background = '#a1a1a1';    
         }
+
+        if(quote_head < quotes.length-1){
+            forward.style.pointerEvents = '';
+            forward.style.background = '';   
+        } 
         
     });
     
     forward.addEventListener('click', () => {
-        if(quote_head >= (quotes.length-1)){
-            quote_head = (quotes.length-1);
-            forward.style.pointerEvents = 'none';
-            forward.style.background = '#a1a1a1';
-            return
-        } else {
+        if(quote_head < quotes.length-1){
             quote_head++;
-            display.innerHTML = quotes[quote_head];
+            display.innerText = quotes[quote_head];
+        } else {
+            quote_head = quotes.length-1;
+            forward.style.pointerEvents = 'none';
+            forward.style.background = '#a1a1a1';    
+        }
+
+        if(quotes.length > 0){
             previous.style.pointerEvents = '';
-            previous.style.background = '';
+            previous.style.background = '';   
         }
     });
 
@@ -207,20 +219,20 @@ window.addEventListener('DOMContentLoaded', () => {
         badge.innerHTML = favorite.length;
     }, 0);
 
-    function netError(){
-        setTimeout(() => {
-            if(display.innerText == ''){
-                log.innerText = 'net::ERR_INTERNET_DISCONNECTED';
-                setTimeout(() => {
-                    log.innerText = '';
-                }, 2500);
-            } else {
-                log.innerText = '';
-            }    
-        }, 1500);
-    }
+    // function netError(){
+    //     setTimeout(() => {
+    //         if(display.innerText == ''){
+    //             log.innerText = 'net::ERR_INTERNET_DISCONNECTED';
+    //             setTimeout(() => {
+    //                 log.innerText = '';
+    //             }, 2500);
+    //         } else {
+    //             log.innerText = '';
+    //         }    
+    //     }, 1500);
+    // }
 
-    netError();
+    // netError();
 
 
     
@@ -271,25 +283,13 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.get-help').addEventListener('click', () => {
         document.querySelector('.get-help').style.display = 'none';
     });
-    // document.getElementById('').addEventListener('click', () => {
-
-    // });
-
-    // document.getElementById('').addEventListener('click', () => {
-
-    // });
-
-    // document.getElementById('').addEventListener('click', () => {
-
-    // });
-
 
 
 
     function send_mail() {
         var templateParams = {
             from_name: document.getElementById('name').value,
-            to_name: "Alphsacid Technologies",
+            to_name: "Alphascid Technologies",
             message: document.getElementById('message').value
         };
 
@@ -321,6 +321,12 @@ window.addEventListener('DOMContentLoaded', () => {
             }, 2500);
             });
     }
+
+    previous.style.pointerEvents = 'none';
+    forward.style.pointerEvents = 'none';
+    forward.style.background = '#a1a1a1';
+    previous.style.background = '#a1a1a1';    
+
 });
 
 
