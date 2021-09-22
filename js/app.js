@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let quotes = new Array();
 
-    
+    console.log(quotes);
 
     fetchQuote();
 
@@ -16,6 +16,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const close_modal = document.getElementById('closeModal');
     const share_button = document.getElementById('share');
     const handBurger = document.getElementById('hand-burger');
+
+    const previous = document.getElementById('previous');
+    const forward = document.getElementById('forward');
 
     const save = document.getElementById('save');
 
@@ -111,6 +114,8 @@ window.addEventListener('DOMContentLoaded', () => {
         report_bg.style.display = 'none';
     });
 
+    let quote_head = 0;
+
     // GET QUOTE FROM THE SERVER
     function fetchQuote(){
         let url = new Request('https://api.adviceslip.com/advice')
@@ -118,6 +123,9 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(res => res.json())
         .then(value => {
             display.innerHTML = `${value.slip.advice}`;
+            quotes.push(display.textContent)
+            quote_head++
+            console.log(quotes)
         }).catch( error => console.log(error))
     }
 
@@ -146,6 +154,21 @@ window.addEventListener('DOMContentLoaded', () => {
             ul.innerHTML += `<li>${quote}</li>`
         })
     }
+
+    previous.addEventListener('click', () => {
+        if(quote_head <= 0){
+            previous.style.visibility = 'hidden'
+            return
+        }
+        quote_head--;
+        display.innerHTML = quotes[quote_head];
+    });
+    
+    forward.addEventListener('click', () => {
+        quote_head++;
+        display.innerHTML = quotes[quote_head];
+    });
+
 
 
     display.addEventListener('click', () => {
