@@ -168,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     forward.addEventListener('click', () => {
         if(quote_head >= quotes.length){
-            quote_head = 0;
+            quote_head = quotes.length;
             return
         } else {
             quote_head++;
