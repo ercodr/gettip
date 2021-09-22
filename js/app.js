@@ -1,5 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+    let quotes = new Array();
+
+    
+
     fetchQuote();
 
     const getQuote = document.getElementById('getQuote');

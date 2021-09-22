@@ -91,7 +91,7 @@ body{
 #display::selection{
     display: none;
 }
-.getQuote{
+/* .getQuote{
     background: var(--primary);
     padding: 15px 30px;
     border-radius: 5px;
@@ -101,10 +101,10 @@ body{
     cursor: pointer;
     box-shadow: 0 5px 10px 1px rgba(133, 133, 133, 0.2);
     transition: .15s;
-}
+} */
 
 .getQuote:active{
-    transform: translateY(2.5px);
+    transform: translateY(3.5px);
 }
 
 .getQuote::selection{
@@ -419,6 +419,40 @@ ul div{
 .get-help ul li:hover{
     /* transform: translateY(-5px); */
     transform: scale(1.1);
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+
+.nav{
+    background: var(--primary);
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: var(--neutral);
+    cursor: pointer;
+    box-shadow: 0 5px 10px 1px rgba(133, 133, 133, 0.2);
+    transition: .15s;
+    margin: 0 5px;
+}
+
+.previous:active{
+    transform: translateX(-3.5px);
+}
+
+.previous::selection{
+    display: none;
+}
+
+
+.forward:active{
+    transform: translateX(3.5px);
+}
+
+.forward::selection{
+    display: none;
 }
 
 
