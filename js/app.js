@@ -125,6 +125,8 @@ window.addEventListener('DOMContentLoaded', () => {
             display.innerHTML = `${value.slip.advice}`;
             quotes.push(display.textContent)
             quote_head++
+            // forward.style.background = '';
+            
             console.log(quotes)
         }).catch( error => console.log(error))
     }
@@ -158,21 +160,29 @@ window.addEventListener('DOMContentLoaded', () => {
     previous.addEventListener('click', () => {
         if(quote_head <= 0){
             quote_head = 0;
+            previous.style.pointerEvents = 'none';
+            previous.style.background = '#a1a1a1';
             return
         } else {
             quote_head--;
             display.innerHTML = quotes[quote_head];
+            forward.style.pointerEvents = '';
+            forward.style.background = '';
         }
         
     });
     
     forward.addEventListener('click', () => {
-        if(quote_head >= quotes.length){
-            quote_head = quotes.length;
+        if(quote_head >= (quotes.length-1)){
+            quote_head = (quotes.length-1);
+            forward.style.pointerEvents = 'none';
+            forward.style.background = '#a1a1a1';
             return
         } else {
             quote_head++;
             display.innerHTML = quotes[quote_head];
+            previous.style.pointerEvents = '';
+            previous.style.background = '';
         }
     });
 
