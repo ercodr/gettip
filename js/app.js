@@ -159,14 +159,21 @@ window.addEventListener('DOMContentLoaded', () => {
         if(quote_head <= 0){
             previous.style.visibility = 'hidden'
             return
+        } else {
+            quote_head--;
+            display.innerHTML = quotes[quote_head];
         }
-        quote_head--;
-        display.innerHTML = quotes[quote_head];
+        
     });
     
     forward.addEventListener('click', () => {
-        quote_head++;
-        display.innerHTML = quotes[quote_head];
+        if(quote_head >= quotes.length){
+            forward.style.visibility = 'hidden'
+            return
+        } else {
+            quote_head++;
+            display.innerHTML = quotes[quote_head];
+        }
     });
 
 
