@@ -88,7 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
     share_button.addEventListener('click', async () => {
         const shareData = {
             title: 'Get Tips',
-            text: display.textContent + '\n\n' + 'Get more... ',
+            text: display.textContent + '\n\n' + 'Shared from...' + '\n',
             url: 'https://ercodr.github.io/gettip/'
           }
           
