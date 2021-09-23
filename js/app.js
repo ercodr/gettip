@@ -253,7 +253,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // SHARE APP
     document.getElementById('share-app').addEventListener('click', async () => {
 
-        const install =  `
+        const install = 
+        `
         *GET TIPS*
         General Tips Generating Web App
 
@@ -269,7 +270,7 @@ window.addEventListener('DOMContentLoaded', () => {
         - Apple Safari
         - Firefox (Android)
 
-        *LINK >> *
+        *URL*
         `
 
         const shareData = {
