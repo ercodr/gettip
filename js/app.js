@@ -254,24 +254,24 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('share-app').addEventListener('click', async () => {
 
         const install = 
-        `
-        *GET TIPS*
-        General Tips Generating Web App
+`
+*GET TIPS*
+General Tips Generating Web App
 
-        *HOW TO INSTALL GET TIPS*:
-        1. Open the below URL in a web browser
-        2. Click on menu (three vertical dots)
-        3. Tap "Add to Home screeen"
-        4. Tap Add
-        5. Tap Add
+*HOW TO INSTALL GET TIPS*:
+1. Open the URL in a browser
+2. Click on menu (three vertical dots)
+3. Tap "Add to Home screeen"
+4. Tap Add
+5. Tap Add
 
-        *SUPPORTED BROWSERS*
-        - Google Chrome
-        - Apple Safari
-        - Firefox (Android)
+*SUPPORTED BROWSERS*
+- Google Chrome
+- Apple Safari
+- Firefox (Android)
 
-        *URL*
-        `
+*URL*
+`
 
         const shareData = {
             title: 'Get Tips',
